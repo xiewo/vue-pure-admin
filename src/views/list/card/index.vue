@@ -6,7 +6,7 @@ export default {
 
 <script setup lang="ts">
 import { getCardList } from "/@/api/list";
-import ReCard from "/@/components/ReCard";
+import Card from "./components/Card.vue";
 import { ref, onMounted, nextTick } from "vue";
 import dialogForm from "./components/DialogForm.vue";
 import { ElMessage, ElMessageBox } from "element-plus";
@@ -97,9 +97,9 @@ const handleManageProduct = product => {
 <template>
   <div class="main">
     <div class="w-full flex justify-between mb-4">
-      <el-button :icon="useRenderIcon('add')" @click="formDialogVisible = true"
-        >新建产品</el-button
-      >
+      <el-button :icon="useRenderIcon('add')" @click="formDialogVisible = true">
+        新建产品
+      </el-button>
       <el-input
         style="width: 300px"
         v-model="searchValue"
@@ -152,7 +152,7 @@ const handleManageProduct = product => {
             :lg="6"
             :xl="4"
           >
-            <ReCard
+            <Card
               :product="product"
               @delete-item="handleDeleteItem"
               @manage-product="handleManageProduct"

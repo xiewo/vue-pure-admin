@@ -1,11 +1,5 @@
 <script setup lang="ts">
-import {
-  ReGithub,
-  ReInfinite,
-  RePie,
-  ReLine,
-  ReBar
-} from "/@/components/ReCharts/index";
+import { ReGithub, ReInfinite, RePie, ReLine, ReBar } from "./components";
 import { ref, computed } from "vue";
 import avatars from "/@/assets/avatars.jpg";
 
@@ -95,9 +89,9 @@ const openDepot = (): void => {
       >
         <el-card style="height: 360px">
           <template #header>
-            <span style="font-size: 16px; font-weight: 500"
-              >GitHub滚动信息</span
-            >
+            <span style="font-size: 16px; font-weight: 500">
+              GitHub滚动信息
+            </span>
           </template>
           <el-skeleton animated :rows="7" :loading="loading">
             <template #default>
@@ -129,9 +123,9 @@ const openDepot = (): void => {
       >
         <el-card>
           <template #header>
-            <span style="font-size: 16px; font-weight: 500"
-              >GitHub饼图信息</span
-            >
+            <span style="font-size: 16px; font-weight: 500">
+              GitHub饼图信息
+            </span>
           </template>
           <el-skeleton animated :rows="7" :loading="loading">
             <template #default>
@@ -163,9 +157,9 @@ const openDepot = (): void => {
       >
         <el-card>
           <template #header>
-            <span style="font-size: 16px; font-weight: 500"
-              >GitHub折线图信息</span
-            >
+            <span style="font-size: 16px; font-weight: 500">
+              GitHub折线图信息
+            </span>
           </template>
           <el-skeleton animated :rows="7" :loading="loading">
             <template #default>
@@ -197,9 +191,9 @@ const openDepot = (): void => {
       >
         <el-card>
           <template #header>
-            <span style="font-size: 16px; font-weight: 500"
-              >GitHub柱状图信息</span
-            >
+            <span style="font-size: 16px; font-weight: 500">
+              GitHub柱状图信息
+            </span>
           </template>
           <el-skeleton animated :rows="7" :loading="loading">
             <template #default>

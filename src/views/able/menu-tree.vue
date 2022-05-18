@@ -5,7 +5,6 @@ export default {
 </script>
 
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
 import { ref, computed } from "vue";
 import type { ElTreeV2 } from "element-plus";
 import { transformI18n } from "/@/plugins/i18n";
@@ -13,7 +12,6 @@ import { useRenderIcon } from "/@/components/ReIcon/src/hooks";
 import { extractPathList, deleteChildren } from "/@/utils/tree";
 import { usePermissionStoreHook } from "/@/store/modules/permission";
 import type { TreeNode } from "element-plus/es/components/tree-v2/src/types";
-const { t } = useI18n();
 
 interface treeNode extends TreeNode {
   meta: {
@@ -48,16 +46,18 @@ const filterMethod = (query: string, node: treeNode) => {
   <el-card>
     <template #header>
       <div class="card-header">
-        <span class="font-medium"
-          >菜单树结构（采用element-plus的
+        <span class="font-medium">
+          菜单树结构（采用element-plus的
           <el-link
             href="https://element-plus.gitee.io/zh-CN/component/tree-v2.html"
             target="_blank"
             :icon="useRenderIcon('node-tree')"
             style="font-size: 16px; margin: 0 5px 4px 0"
-            >Tree V2</el-link
-          >组件并支持国际化）</span
-        >
+          >
+            Tree V2
+          </el-link>
+          组件并支持国际化）
+        </span>
       </div>
     </template>
     <el-input
@@ -77,7 +77,7 @@ const filterMethod = (query: string, node: treeNode) => {
       :default-expanded-keys="expandedKeys"
     >
       <template #default="{ data }">
-        <span>{{ t(data.meta.title) }}</span>
+        <span>{{ transformI18n(data.meta.title) }}</span>
       </template>
     </el-tree-v2>
   </el-card>
